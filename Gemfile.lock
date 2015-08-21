@@ -1,5 +1,5 @@
 GEM
-  remote: https://api.rubygems.org/
+  remote: https://rubygems.org/
   specs:
     backports (3.6.6)
     capybara (2.4.4)
@@ -10,6 +10,17 @@ GEM
       xpath (~> 2.0)
     coderay (1.1.0)
     diff-lcs (1.2.5)
+    em-dir-watcher (0.9.4)
+    em-websocket (0.5.1)
+      eventmachine (>= 0.12.9)
+      http_parser.rb (~> 0.6.0)
+    eventmachine (1.0.8)
+    http_parser.rb (0.6.0)
+    json (1.8.1)
+    livereload (1.6.1)
+      em-dir-watcher (>= 0.1)
+      em-websocket (>= 0.3.5)
+      json (>= 1.5.3)
     method_source (0.8.2)
     mime-types (2.6.1)
     mini_portile (0.6.2)
@@ -60,8 +71,12 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
+  livereload
   pg
   pry
   rspec
   sinatra
   sinatra-contrib
+
+BUNDLED WITH
+   1.10.6

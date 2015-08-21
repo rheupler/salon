@@ -1,0 +1,42 @@
+<div class='contain'>
+  
+<form action="/client/new" method="post">
+  <label for="name">Sign Up a Client</label>
+  <input type="text" name="name" placeholder="Client name here">
+  <button type="submit" class="btn btn-sm btn-primary">Go</button>
+</form>
+
+<ul>
+  <% @clients.each do |client| %>
+  <li>
+    <a href="/client/<%= client.id %>">
+      <%= client.name %>
+    </a>
+  </li>
+
+<% end %>
+</ul>
+
+<form action="/stylist/new" method="post">
+  <label for="name">Sign Up to a Stylist</label>
+  <input type="text" name="name" placeholder="Stylist name here">
+  <button name="David" type="submit" class="btn btn-sm btn-primary">Go</button>
+</form>
+
+<ul>
+  <% @stylists.each do |stylist| %>
+  <li>
+    <a href="/stylist/<%= stylist.id %>">
+      <%= stylist.name %>
+    </a>
+  </li>
+
+<% end %>
+</ul>
+
+
+<a href="/client">For Clients Click Here</a>
+<br>
+<a href="/stylist">For Stylists Click Here</a>
+
+</div>
