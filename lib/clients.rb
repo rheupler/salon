@@ -23,4 +23,8 @@ class Clients
     @id = save_client.first.fetch("id").to_i
   end
 
+  def ==(another_client)
+    self.id == another_client.id
+  end
+  
 end
