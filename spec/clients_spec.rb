@@ -44,5 +44,16 @@ describe Clients do
       expect(Clients.all).to eq [client1]
     end
   end
+
+  describe '#update' do
+    it 'changes a client in the database' do
+      client1 = Clients.new({name: 'Jo Jo White'})
+      client1.save
+      client1.update({name: 'KC Jones'})
+      expect(client1.name).to eq 'KC Jones'
+    end
+  end
   
+
+
 end
