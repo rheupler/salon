@@ -2,7 +2,7 @@ class Clients
 
   attr_reader :name, :id
 
-  def initialize(attributes)
+  def initialize (attributes)
     @name = attributes.fetch(:name)
     @id = attributes.fetch(:id, nil)
   end
@@ -23,8 +23,18 @@ class Clients
     @id = save_client.first.fetch("id").to_i
   end
 
-  def ==(another_client)
+  def == (another_client)
     self.id == another_client.id
+  end
+
+  def self.find (id)
+    found_client = nil
+    Clients.all.each do |client|
+      if client.id == id
+        found_client = client
+      end
+    end
+    found_client
   end
   
 end
