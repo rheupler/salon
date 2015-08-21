@@ -23,4 +23,15 @@ class Stylists
     @id = save_stylist.first.fetch("id").to_i
   end
 
+  def self.find (id)
+    found_stylist = nil
+    Stylists.all.each do |stylist|
+      if stylist.id == id
+        found_stylist = stylist
+      end
+    end
+    found_stylist
+  end
+
+
 end
