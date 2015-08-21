@@ -48,4 +48,29 @@ class Stylists
     #do I need to update id as well?
   end
 
+
+#NEED TO FIX THIS, BOTTOM METHOD IS EX. FROM HW. TAKE A LOOK AFTER I GET EVERYTHING ELSE GOING.
+
+  # def clients
+  #   list_clients = []
+  #   clients = DB.exec("SELECT * FROM clients WHERE stylist_id = #{self.id}")
+  #   clients.each do |clients|
+  #     list_id = clients.fetch('client_id').to_i
+  #     name = clients.fetch('name')
+  #     list_clients.push(Clients.new({name: name, list_id: list_id}))
+  #   end
+  #   list_clients
+  # end
+
+ #  define_method(:tasks) do
+ #   list_tasks = []
+ #   tasks = DB.exec("SELECT * FROM tasks WHERE list_id = #{self.id()};")
+ #   tasks.each() do |task|
+ #     description = task.fetch("description")
+ #     list_id = task.fetch("list_id").to_i()
+ #     list_tasks.push(Task.new({:description => description, :list_id => list_id}))
+ #   end
+ #   list_tasks
+ # end
+
 end
