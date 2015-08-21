@@ -8,4 +8,12 @@ describe Clients do
     end
   end
 
+  describe '#save' do
+    it 'saves a new client into the database' do
+      client = Clients.new({name: 'Michael Jordan'})
+      client.save
+      expect(Clients.all).to eq [client]
+    end
+  end
+  
 end
