@@ -26,12 +26,23 @@ describe Clients do
     end
   end
 
-  describe("#==") do
-      it("is the same client if they have the same name") do
+  describe '#==' do
+      it 'is the same client if they have the same name' do
         client1 = Clients.new({name: 'KC Jones'})
         client2 = Clients.new({name: 'KC Jones'})
         expect(client1).to(eq(client2))
       end
     end
 
+  describe '#delete' do
+    it 'deletes a client from the database' do
+      client1 = Clients.new({name: 'Bill Russell'})
+      client1.save
+      client2 = Clients.new({name: 'Kobe Bryant'})
+      client2.save
+      client2.delete
+      expect(Clients.all).to eq [client1]
+    end
+  end
+  
 end
