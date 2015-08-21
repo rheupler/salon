@@ -18,4 +18,9 @@ class Stylists
     stylists
   end
 
+  def save
+    save_stylist = DB.exec("INSERT INTO stylists (name) VALUES ('#{@name}') RETURNING id;")
+    @id = save_stylist.first.fetch("id").to_i
+  end
+
 end
