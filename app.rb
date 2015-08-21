@@ -83,3 +83,12 @@ delete '/client/:id' do
   @clients = Clients.all()
   erb :delete
 end
+
+#deleting stylists
+delete '/stylist/:id' do
+  stylist_id = params.fetch('id').to_i
+  stylist = Stylists.find(stylist_id)
+  stylist.delete
+  @stylists = Stylists.all()
+  erb :delete
+end
