@@ -15,7 +15,7 @@ get '/' do
 end
 
 post '/stylist/new' do
-  name = params.fetch('name')
+  name = params.fetch('stylist_name')
   stylist = Stylists.new({:name => name})
   stylist.save()
   @stylists = Stylists.all
@@ -23,7 +23,7 @@ post '/stylist/new' do
 end
 
 post '/client/new' do
-  name = params.fetch('name')
+  name = params.fetch('client_name')
   client = Clients.new({name: name})
   client.save
   @clients = Clients.all()

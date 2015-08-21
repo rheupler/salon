@@ -10,3 +10,16 @@ describe '/', {:type => :feature} do
     expect(page).to have_content("")
   end
 end
+
+
+describe '/clients/', {:type => :feature} do
+  it 'displays index page with clients' do
+    visit('/')
+    fill_in "client_name", with: "John Havlicek"
+    click_button "Go"
+    click_link "Back to your Lists"
+    expect(page).to have_content("John Havlicek")
+    visit('/')
+    expect(page).to have_content("John Havlicek")
+  end
+end
