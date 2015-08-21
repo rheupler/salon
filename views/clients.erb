@@ -1,0 +1,10 @@
+<h1>Welcome to the page for <%= @client.name %>!</h1>
+
+<h2>Edit Client</h2>
+
+
+<form action="/client/<%= @client.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <input class="form-control" type="text" placeholder="name" name="name" value="<%= @client.name %>">
+  <button type="submit" class="btn btn-success">Save Changes</button>
+</form>

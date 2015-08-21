@@ -31,10 +31,15 @@ post '/client/new' do
 end
 
 get('/stylist/:id') do
-  patron_id = params.fetch('id').to_i
-
-  @stylist = Stylists.find(patron_id)
+  stylist_id = params.fetch('id').to_i
+  @stylist = Stylists.find(stylist_id)
   #display clients needed here when method works
-
   erb :stylists
+end
+
+get('/client/:id') do
+  client_id = params.fetch('id').to_i
+  @client = Clients.find(client_id)
+  #display clients needed here when method works
+  erb :clients
 end
