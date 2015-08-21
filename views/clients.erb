@@ -8,3 +8,9 @@
   <input class="form-control" type="text" placeholder="name" name="name" value="<%= @client.name %>">
   <button type="submit" class="btn btn-success">Save Changes</button>
 </form>
+
+
+<form action="/client/<%= @client.id %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <button class="btn btn-danger btn-sm" type="submit">Delete Client</button>
+      </form>
