@@ -23,3 +23,15 @@ describe '/clients/', {:type => :feature} do
     expect(page).to have_content("John Havlicek")
   end
 end
+
+describe '/stylists/', {:type => :feature} do
+  it 'displays index page with stylists' do
+    visit('/')
+    fill_in "stylist_name", with: "Paul Pierce"
+    click_button "submit"
+    click_link "Back to your Lists"
+    expect(page).to have_content("Paul Pierce")
+    visit('/')
+    expect(page).to have_content("Paul Pierce")
+  end
+end
