@@ -34,4 +34,15 @@ describe Stylists do
       end
     end
 
+  describe '#delete' do
+    it 'deletes a stylist from the database' do
+      stylist1 = Stylists.new({name: 'Kevin Garnett'})
+      stylist1.save
+      stylist2 = Stylists.new({name: 'Lebron James'})
+      stylist2.save
+      stylist2.delete
+      expect(Stylists.all).to eq [stylist1]
+    end
+  end
+
 end

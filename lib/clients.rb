@@ -39,6 +39,7 @@ class Clients
 
   def delete
     DB.exec("DELETE FROM clients * WHERE id = #{@id};")
+    #I think I will need to come nack and add a delete from join table here as well? But for now it passes Clients spec.
   end
 
 end
