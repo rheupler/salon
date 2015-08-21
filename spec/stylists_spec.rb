@@ -26,5 +26,8 @@ describe Stylists do
     end
   end
 
+  def == (another_stylist)
+    self.id == another_stylist.id
+  end
 
 end
