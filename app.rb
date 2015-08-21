@@ -92,3 +92,13 @@ delete '/stylist/:id' do
   @stylists = Stylists.all()
   erb :delete
 end
+
+#adding clients to stylists, need to fix
+post "/stylist_client_add" do
+  name = params.fetch("name")
+  stylist_id = params.fetch("stylist_id").to_i()
+  @stylist = Stylists.find(stylist_id)
+  @client = Clients.new({name: name, stylist_id: stylist_id})
+  @client.save
+  erb :edit
+end
