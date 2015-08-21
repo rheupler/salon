@@ -37,4 +37,9 @@ class Stylists
     self.id == another_stylist.id
   end
 
+  def delete
+    DB.exec("DELETE FROM stylists * WHERE id = #{@id}")
+    #same as clients, think I need to fit in a delete for a join table called stylists_clients
+  end
+
 end
