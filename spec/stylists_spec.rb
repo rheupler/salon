@@ -16,4 +16,15 @@ describe Stylists do
     end
   end
 
+  describe '.find' do
+    it 'finds a stylist based on an ID' do
+      stylist1 = Stylists.new({name: 'Scotty Pippen'})
+      stylist1.save
+      stylist2 = Stylists.new({name: 'Larry Bird'})
+      stylist2.save
+      expect(Stylists.find(stylist2.id)).to eq stylist2
+    end
+  end
+
+
 end
