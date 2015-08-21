@@ -74,3 +74,12 @@ patch '/stylist/:id' do
   @stylist.update({name: name})
   erb :edit
 end
+
+#deleting clients
+delete '/client/:id' do
+  client_id = params.fetch('id').to_i
+  client = Clients.find(client_id)
+  client.delete
+  @clients = Clients.all()
+  erb :delete
+end
