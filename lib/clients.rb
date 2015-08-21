@@ -42,4 +42,10 @@ class Clients
     #I think I will need to come nack and add a delete from join table here as well? But for now it passes Clients spec.
   end
 
+  def update (attributes)
+    @name = attributes.fetch(:name, @name)
+    DB.exec("UPDATE clients SET name = '#{name}' WHERE id = #{@id}")
+    #do I need to update id as well?
+  end
+
 end
