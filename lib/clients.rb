@@ -36,5 +36,9 @@ class Clients
     end
     found_client
   end
-  
+
+  def delete
+    DB.exec("DELETE FROM clients * WHERE id = #{@id};")
+  end
+
 end
