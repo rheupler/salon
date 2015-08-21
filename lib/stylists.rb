@@ -42,4 +42,10 @@ class Stylists
     #same as clients, think I need to fit in a delete for a join table called stylists_clients
   end
 
+  def update (attributes)
+    @name = attributes.fetch(:name, @name)
+    DB.exec("UPDATE stylists SET name = '#{name}' WHERE id = #{@id}")
+    #do I need to update id as well?
+  end
+
 end
