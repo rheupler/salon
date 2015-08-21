@@ -25,5 +25,13 @@ describe Clients do
       expect(Clients.find(client2.id)).to eq client2
     end
   end
-  
+
+  describe("#==") do
+      it("is the same client if they have the same name") do
+        client1 = Clients.new({name: 'KC Jones'})
+        client2 = Clients.new({name: 'KC Jones'})
+        expect(client1).to(eq(client2))
+      end
+    end
+
 end
