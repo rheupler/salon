@@ -45,4 +45,13 @@ describe Stylists do
     end
   end
 
+  describe '#update' do
+    it 'changes a stylist in the database' do
+      stylist1 = Stylists.new({name: 'Jo Jo White'})
+      stylist1.save
+      stylist1.update({name: 'Ray Allen'})
+      expect(stylist1.name).to eq 'Ray Allen'
+    end
+  end
+
 end

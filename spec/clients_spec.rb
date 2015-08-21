@@ -53,7 +53,5 @@ describe Clients do
       expect(client1.name).to eq 'KC Jones'
     end
   end
-  
-
 
 end
