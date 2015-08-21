@@ -40,10 +40,10 @@ end
 get('/client/:id') do
   client_id = params.fetch('id').to_i
   @client = Clients.find(client_id)
-  #display clients needed here when method works
   erb :clients
 end
 
+#editing Clients
 get '/client/:id/edit' do
   client_id = params.fetch('id').to_i
   @client = Clients.find(client_id)
@@ -56,5 +56,21 @@ patch '/client/:id' do
   @client = Clients.find(client_id)
   name = params.fetch('name')
   @client.update({name: name})
-  erb :success
+  erb :edit
+end
+
+#Editing Stylists
+get '/stylist/:id/edit' do
+  stylist_id = params.fetch('id').to_i
+  @stylist = Stylists.find(client_id)
+  erb :index
+end
+
+
+patch '/stylist/:id' do
+  stylist_id = params.fetch('id').to_i
+  @stylist = Stylists.find(client_id)
+  name = params.fetch('name')
+  @stylist.update({name: name})
+  erb :edit
 end
