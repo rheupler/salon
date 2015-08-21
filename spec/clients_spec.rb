@@ -15,5 +15,15 @@ describe Clients do
       expect(Clients.all).to eq [client]
     end
   end
+
+  describe '.find' do
+    it 'finds a client based on an ID' do
+      client1 = Clients.new({name: 'Scotty Pippen'})
+      client1.save
+      client2 = Clients.new({name: 'Larry Bird'})
+      client2.save
+      expect(Clients.find(client2.id)).to eq client2
+    end
+  end
   
 end
