@@ -26,8 +26,12 @@ describe Stylists do
     end
   end
 
-  def == (another_stylist)
-    self.id == another_stylist.id
-  end
+  describe("#==") do
+      it("is the same stylist if they have the same name") do
+        stylist1 = Stylists.new({name: 'Coach Red'})
+        stylist2 = Stylists.new({name: 'Coach Red'})
+        expect(stylist1).to(eq(stylist2))
+      end
+    end
 
 end

@@ -33,5 +33,8 @@ class Stylists
     found_stylist
   end
 
+  def == (another_stylist)
+    self.id == another_stylist.id
+  end
 
 end
