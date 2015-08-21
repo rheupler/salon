@@ -53,10 +53,10 @@ class Stylists
   def clients
     list_clients = []
     clients = DB.exec("SELECT * FROM clients WHERE stylist_id = #{@id}")
-    clients.each do |clients|
-      list_id = clients.fetch('client_id').to_i
-      name = clients.fetch('name')
-      list_clients.push(Clients.new({name: name, list_id: list_id}))
+    clients.each do |client|
+      stylist_id = client.fetch('client_id').to_i
+      name = client.fetch('name')
+      list_clients.push(Clients.new({name: name, stylist_id: stylist_id}))
     end
     list_clients
   end
