@@ -13,3 +13,12 @@
         <input type="hidden" name="_method" value="delete">
         <button class="btn btn-danger btn-sm" type="submit">Delete Stylist</button>
       </form>
+
+
+      <h2>Add a client</h2>
+
+      <form action="/stylist_client" method="post">
+        <input id="stylist_id" name="stylist_id" type="hidden" value="<%= @stylist.id %>">
+        <input id="description" name="description" type="text" placeholder="client name">
+        <button type="submit">Add client</button>
+      </form>
