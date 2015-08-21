@@ -13,9 +13,14 @@ class Clients
     returned_clients.each do |client|
       name = client.fetch('name')
       id = client.fetch('id').to_i
-      cleints.push(Clients.new({name: name, id: id}))
+      clients.push(Clients.new({name: name, id: id}))
     end
     clients
+  end
+
+  def save
+    save_client = DB.exec("INSERT INTO clients (name) VALUES ('#{@name}') RETURNING id;")
+    @id = save_client.first.fetch("id").to_i
   end
 
 end
