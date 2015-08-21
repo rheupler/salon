@@ -1,0 +1,3 @@
+class Stylists
+
+end
