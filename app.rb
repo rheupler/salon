@@ -43,3 +43,18 @@ get('/client/:id') do
   #display clients needed here when method works
   erb :clients
 end
+
+get '/client/:id/edit' do
+  client_id = params.fetch('id').to_i
+  @client = Clients.find(client_id)
+  erb :index
+end
+
+
+patch '/client/:id' do
+  client_id = params.fetch('id').to_i
+  @client = Clients.find(client_id)
+  name = params.fetch('name')
+  @client.update({name: name})
+  erb :success
+end
