@@ -29,3 +29,12 @@ post '/client/new' do
   @clients = Clients.all()
   erb :success
 end
+
+get('/stylist/:id') do
+  patron_id = params.fetch('id').to_i
+
+  @stylist = Stylists.find(patron_id)
+  #display clients needed here when method works
+
+  erb :stylists
+end
