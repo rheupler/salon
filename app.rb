@@ -30,12 +30,16 @@ post '/client/new' do
   erb :success
 end
 
-get('/stylist/:id') do
-  stylist_id = params.fetch('id').to_i
-  @stylist = Stylists.find(stylist_id)
-  @clients = @stylist.clients
-  #display clients needed here when method works
-  erb :stylists
+# get('/stylist/:id') do
+#   stylist_id = params.fetch('id').to_i
+#   @stylist = Stylists.find(stylist_id)
+#   @clients = @stylist.clients
+#   #display clients needed here when method works
+#   erb :stylists
+# end
+get("/stylist/:id") do
+  @stylist = Stylists.find(params.fetch("id").to_i())
+  erb(:stylists)
 end
 
 get('/client/:id') do

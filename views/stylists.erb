@@ -1,4 +1,4 @@
-<h1>Welcome to the page for <%= @stylist.name %>!</h1>
+<h1>Welcome to the page for <%= @stylist.name() %>!</h1>
 
 <h2>Edit stylist</h2>
 
@@ -22,8 +22,3 @@
         <input id="name" name="name" type="text" placeholder="client name">
         <button type="submit">Add client</button>
       </form>
-
-      <% @clients.each do |client| %>
-        <%= client.name %>
-        <% end %>
-      <a href="/">Back to your Lists</a>

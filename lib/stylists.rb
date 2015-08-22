@@ -51,16 +51,28 @@ class Stylists
 
 #NEED TO FIX THIS. TAKE A LOOK AFTER I GET EVERYTHING ELSE GOING ON FRONT END
 
-  def clients
-    list_clients = []
-    clients = DB.exec("SELECT * FROM clients WHERE stylist_id = #{@id};")
-    clients.each do |client|
-      stylist_id = client.fetch('stylist_id').to_i
-      name = client.fetch('name')
-      list_clients.push(Clients.new({:name => name, :stylist_id => stylist_id}))
-    end
-    list_clients
+  # def clients
+  #   list_clients = []
+  #   clients = DB.exec("SELECT * FROM clients WHERE stylist_id = #{self.id()};")
+  #   clients.each do |client|
+  #     stylist_id = client.fetch('stylist_id').to_i
+  #     name = client.fetch('name')
+  #     list_clients.push(Clients.new({:name => name, :stylist_id => stylist_id}))
+  #   end
+  #   list_clients
+  # end
+
+  define_method(:clients) do
+  list_clients = []
+  clients = DB.exec("SELECT * FROM clients WHERE stylist_id = #{self.id()} ORDER BY name;")
+  clients.each() do |customer|
+    name = customer.fetch("name")
+    stylist_id = client.fetch("stylist_id")
+    id = customer.fetch("id").to_i()
+    list_clients.push(Customer.new({:name => name, :stylist_id => stylist_id, :id => id}))
   end
+  list_clients
+end
 
 
 
