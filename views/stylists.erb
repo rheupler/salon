@@ -23,7 +23,7 @@
         <button type="submit">Add client</button>
       </form>
 
-      <% @stylists.clients do |client| %>
-        <% client.name %>
+      <% @clients.each do |client| %>
+        <%= client.name %>
         <% end %>
       <a href="/">Back to your Lists</a>

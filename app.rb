@@ -33,6 +33,7 @@ end
 get('/stylist/:id') do
   stylist_id = params.fetch('id').to_i
   @stylist = Stylists.find(stylist_id)
+  @clients = @stylist.clients
   #display clients needed here when method works
   erb :stylists
 end
@@ -98,8 +99,8 @@ post "/stylist_client_add" do
   name = params.fetch("name")
   stylist_id = params.fetch("stylist_id").to_i()
   @stylist = Stylists.find(stylist_id)
-  @client = Clients.new({name: name, stylist_id: stylist_id})
+  @client = Clients.new({:name => name, :stylist_id => stylist_id})
   @client.save
-  binding.pry
+  @clients = @stylist.clients
   erb :edit
 end
