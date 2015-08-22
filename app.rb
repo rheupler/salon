@@ -100,5 +100,6 @@ post "/stylist_client_add" do
   @stylist = Stylists.find(stylist_id)
   @client = Clients.new({name: name, stylist_id: stylist_id})
   @client.save
+  binding.pry
   erb :edit
 end

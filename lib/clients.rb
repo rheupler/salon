@@ -1,10 +1,11 @@
 class Clients
 
-  attr_reader :name, :id
+  attr_reader :name, :id, :stylist_id
 
   def initialize (attributes)
     @name = attributes.fetch(:name)
     @id = attributes.fetch(:id, nil)
+    @stylist_id = attributes.fetch(:stylist_id, nil)
   end
 
   def self.all

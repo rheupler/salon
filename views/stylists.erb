@@ -12,7 +12,7 @@
 <form action="/stylist/<%= @stylist.id %>" method="post">
         <input type="hidden" name="_method" value="delete">
         <button class="btn btn-danger btn-sm" type="submit">Delete Stylist</button>
-      </form>
+</form>
 
 
       <h2>Add a client</h2>
@@ -23,4 +23,7 @@
         <button type="submit">Add client</button>
       </form>
 
+      <% @stylists.clients do |client| %>
+        <% client.name %>
+        <% end %>
       <a href="/">Back to your Lists</a>
